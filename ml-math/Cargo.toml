@@ -1,5 +1,5 @@
 [package]
-name = "fina" # lowercase recommended
+name = "ml-math" # lowercase recommended
 version = "0.1.0"
 edition = "2021"
 authors = ["Yash"]
@@ -7,7 +7,7 @@ description = "A fast math library for machine learning functions written in Rus
 license = "MIT"
 
 [lib]
-name = "fina"
+name = "ml-math"
 crate-type = ["cdylib"]
 
 [dependencies]
@@ -15,4 +15,4 @@ pyo3 = { version = "0.21.2", features = ["extension-module", "abi3-py37"] }
 
 
 [package.metadata.maturin]
-name = "fina"
+name = "ml-math"
