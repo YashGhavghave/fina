@@ -1,14 +1,13 @@
-# fina
+# ml-math
 
-`fina` is a **Rust-powered Python library** that delivers **high-speed mathematical, statistical, and machine learning functions**.  
+`ml-math` is a **Rust-powered Python library** that delivers **high-speed mathematical, statistical, and machine learning functions**.  
 It is built with [PyO3](https://pyo3.rs/) and packaged with [maturin](https://github.com/PyO3/maturin), meaning you get **native Rust performance** with the simplicity of Python.
 
 ---
 
-##  What is `fina`?
+## What is `ml-math`?
 
-`fina` is short for **Fast INtelligent Algorithms**.  
-It provides a **single Python package** containing a wide set of **numerical and machine learning helper functions** that are commonly needed in:
+`ml-math` (short for **Machine Learning Mathematics**) is a single Python package that provides a wide set of **numerical and machine learning helper functions** commonly needed in:
 
 - Machine learning preprocessing
 - Statistical analysis
@@ -17,11 +16,11 @@ It provides a **single Python package** containing a wide set of **numerical and
 - Loss function calculations
 - Neural network activations
 
-Instead of relying on slow Python loops or multiple packages, `fina` implements these functions **directly in Rust** and exposes them to Python for **maximum speed and efficiency**.
+Instead of relying on slow Python loops or multiple packages, `ml-math` implements these functions **directly in Rust** and exposes them to Python for **maximum speed and efficiency**.
 
 ---
 
-##  Why Rust + Python?
+## Why Rust + Python?
 
 Python is the dominant language for data science, but heavy numerical computations in Python alone can be **slow** without NumPy or C extensions.  
 Rust offers:
@@ -31,13 +30,13 @@ Rust offers:
 - **Fast native performance**
 - **Cross-platform compatibility**
 
-With `fina`, you get **Rust speed** with **Python usability**.
+With `ml-math`, you get **Rust speed** with **Python usability**.
 
 ---
 
-##  Features
+## Features
 
-`fina` currently includes:
+`ml-math` currently includes:
 
 ### **Statistics & Mathematics**
 - `mean(data)` – Average of values  
@@ -71,54 +70,52 @@ With `fina`, you get **Rust speed** with **Python usability**.
 
 ---
 
-##  Installation
+## Installation
 
 ```bash
-pip install fina
+pip install ml-math
 
-##  Example Usage
 
-```python
-import fina
+import ml_math as ml
 
 # ===============================
 #  Statistics
 # ===============================
-print("Mean:", fina.mean([1, 2, 3]))            # 2.0
-print("Variance:", fina.variance([1, 2, 3]))    # 0.666...
-print("Std Dev:", fina.std_dev([1, 2, 3]))      # 0.816...
-print("RMS:", fina.rms([1, 2, 3]))              # 2.160...
+print("Mean:", ml.mean([1, 2, 3]))            # 2.0
+print("Variance:", ml.variance([1, 2, 3]))    # 0.666...
+print("Std Dev:", ml.std_dev([1, 2, 3]))      # 0.816...
+print("RMS:", ml.rms([1, 2, 3]))              # 2.160...
 
 # ===============================
 #  Vector Operations
 # ===============================
-print("Dot Product:", fina.dot([1, 2], [3, 4]))             # 11
-print("Euclidean Distance:", fina.euclidean([1, 2], [4, 6])) # 5.0
-print("Cosine Similarity:", fina.cosine_similarity([1, 0], [0, 1]))  # 0.0
+print("Dot Product:", ml.dot([1, 2], [3, 4]))             # 11
+print("Euclidean Distance:", ml.euclidean([1, 2], [4, 6])) # 5.0
+print("Cosine Similarity:", ml.cosine_similarity([1, 0], [0, 1]))  # 0.0
 
 # ===============================
 #  Activation Functions
 # ===============================
-print("Sigmoid(1.0):", fina.sigmoid(1.0))       # ~0.731
-print("ReLU(-2.0):", fina.relu(-2.0))           # 0.0
-print("Leaky ReLU(-2.0, 0.1):", fina.leaky_relu(-2.0, 0.1)) # -0.2
-print("Tanh(1.0):", fina.tanh_act(1.0))         # ~0.761
+print("Sigmoid(1.0):", ml.sigmoid(1.0))       # ~0.731
+print("ReLU(-2.0):", ml.relu(-2.0))           # 0.0
+print("Leaky ReLU(-2.0, 0.1):", ml.leaky_relu(-2.0, 0.1)) # -0.2
+print("Tanh(1.0):", ml.tanh_act(1.0))         # ~0.761
 
 # ===============================
 #  Loss Functions
 # ===============================
-print("MSE:", fina.mse([1, 2], [1, 3]))                  # 0.5
-print("Cross Entropy:", fina.cross_entropy([0.8, 0.2], [1, 0])) # ~0.223
-print("Log Loss:", fina.log_loss([0.9, 0.1], [1, 0]))    # ~0.105
+print("MSE:", ml.mse([1, 2], [1, 3]))                  # 0.5
+print("Cross Entropy:", ml.cross_entropy([0.8, 0.2], [1, 0])) # ~0.223
+print("Log Loss:", ml.log_loss([0.9, 0.1], [1, 0]))    # ~0.105
 
 # ===============================
 #  Normalization
 # ===============================
-print("Min-Max Normalize:", fina.min_max_normalize([1, 2, 3]))  # [0.0, 0.5, 1.0]
-print("Z-Score Normalize:", fina.z_score_normalize([1, 2, 3]))  # [-1.224, 0.0, 1.224]
-print("Clamp(5, 0, 3):", fina.clamp(5, 0, 3))                   # 3
+print("Min-Max Normalize:", ml.min_max_normalize([1, 2, 3]))  # [0.0, 0.5, 1.0]
+print("Z-Score Normalize:", ml.z_score_normalize([1, 2, 3]))  # [-1.224, 0.0, 1.224]
+print("Clamp(5, 0, 3):", ml.clamp(5, 0, 3))                   # 3
 
 # ===============================
 #  Utilities
 # ===============================
-print("EMA:", fina.ema([1, 2, 3, 4, 5], 0.5))  # Smooth moving average
+print("EMA:", ml.ema([1, 2, 3, 4, 5], 0.5))  # Smooth moving average
